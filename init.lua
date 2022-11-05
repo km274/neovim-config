@@ -14,6 +14,9 @@ vim.g.go_highlight_generate_tags = 1
 vim.o.number = 1
 vim.o.relativenumber = 1
 
+-- Set termguicolors to enable highlight groups (for nvim-tree)
+vim.opt.termguicolors = true
+
 -- This code installs packer and came from https://github.com/wbthomason/packer.nvim#bootstrapping
 local ensure_packer = function()
   local fn = vim.fn
@@ -30,6 +33,23 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
+  -- Dracula theme
+  use 'Mofiqul/dracula.nvim'
+  vim.cmd[[colorscheme dracula]]
+
+  -- lualine (status line plugin)
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  -- Use lualine and use dracula-nvim color scheme
+  require('lualine').setup {
+    options = {
+      theme = 'dracula-nvim'
+    }
+  }
 
   -- nvim-tree requires a patched font to display file icons in the file tree
   -- "patched font": a font that has had a bunch of extra icons and glyphs added to it
