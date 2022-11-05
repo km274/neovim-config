@@ -51,6 +51,12 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- markdown-preview plugin 
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
   -- nvim-tree requires a patched font to display file icons in the file tree
   -- "patched font": a font that has had a bunch of extra icons and glyphs added to it
   -- https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/DroidSansMono.zip is a good one
