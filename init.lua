@@ -51,11 +51,7 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- markdown-preview plugin 
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+  use {"ellisonleao/glow.nvim"}
 
   -- nvim-tree requires a patched font to display file icons in the file tree
   -- "patched font": a font that has had a bunch of extra icons and glyphs added to it
