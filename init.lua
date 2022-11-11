@@ -51,6 +51,9 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- Git messenger floating window (shows commit message for particular code line)
+  use {"rhysd/git-messenger.vim"}
+
   -- Markdown previews withing nvim (does not support images)
   use {"ellisonleao/glow.nvim"}
 
