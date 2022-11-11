@@ -51,7 +51,14 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- Markdown previews withing nvim (does not support images)
   use {"ellisonleao/glow.nvim"}
+
+  -- In-browser Markdown previews (supports images)
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   -- nvim-tree requires a patched font to display file icons in the file tree
   -- "patched font": a font that has had a bunch of extra icons and glyphs added to it
