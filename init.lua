@@ -14,6 +14,9 @@ vim.g.go_highlight_generate_tags = 1
 vim.o.number = 1
 vim.o.relativenumber = 1
 
+-- Enable sign column
+vim.o.signcolumn = "yes"
+
 -- Set termguicolors to enable highlight groups (for nvim-tree)
 vim.opt.termguicolors = true
 
@@ -53,6 +56,14 @@ return require('packer').startup(function(use)
 
   -- Git messenger floating window (shows commit message for particular code line)
   use {"rhysd/git-messenger.vim"}
+
+  -- Git signs in sign column
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
   -- Markdown previews withing nvim (does not support images)
   use {"ellisonleao/glow.nvim"}
