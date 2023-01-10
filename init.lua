@@ -88,7 +88,9 @@ return require('packer').startup(function(use)
   }
 
   -- setup() function can be used to configure as desired
-  require("nvim-tree").setup()
+  require("nvim-tree").setup{
+    open_on_setup = true,
+  } 
 
   -- When setting up on new machine, need to run :GoInstallBinaries to install dependencies 
   use 'fatih/vim-go'
