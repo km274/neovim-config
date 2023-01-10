@@ -20,6 +20,10 @@ vim.o.signcolumn = "yes"
 -- Set termguicolors to enable highlight groups (for nvim-tree)
 vim.opt.termguicolors = true
 
+-- Set tabs to be 4 spaces in width (seemed to be 8 by default)
+vim.bo.tabstop = 4
+vim.bo.shiftwidth = 4
+
 -- This code installs packer and came from https://github.com/wbthomason/packer.nvim#bootstrapping
 local ensure_packer = function()
   local fn = vim.fn
