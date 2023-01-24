@@ -22,6 +22,7 @@ vim.opt.termguicolors = true
 
 -- Set tabs to be 4 spaces in width (seemed to be 8 by default)
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 -- This code installs packer and came from https://github.com/wbthomason/packer.nvim#bootstrapping
 local ensure_packer = function()
@@ -54,7 +55,15 @@ return require('packer').startup(function(use)
   require('lualine').setup {
     options = {
       theme = 'dracula-nvim'
-    }
+    },
+    sections = {
+      lualine_c = {
+		{
+	      'filename',
+		  path = 3,
+	    },
+	  },
+	},
   }
 
   -- Git messenger floating window (shows commit message for particular code line)
