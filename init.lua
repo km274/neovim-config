@@ -113,6 +113,11 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Provides syntax highlighting, goto functionality, etc. for Python;
+  -- requires the pynvim Python module to be available in the active Python
+  -- environment while nvim is running
+  use 'davidhalter/jedi-vim'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
