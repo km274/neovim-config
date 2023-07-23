@@ -118,6 +118,9 @@ return require('packer').startup(function(use)
   -- environment while nvim is running
   use 'davidhalter/jedi-vim'
 
+  -- HCL syntax highlighting and commands
+  use 'hashivim/vim-terraform'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
