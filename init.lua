@@ -15,8 +15,8 @@ vim.g.go_highlight_generate_tags = 1
 vim.g.go_auto_type_info = 1
 
 -- Enable hybrid line numbering
-vim.o.number = 1
-vim.o.relativenumber = 1
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- Enable sign column
 vim.o.signcolumn = "yes"
