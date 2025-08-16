@@ -157,6 +157,7 @@ return require('packer').startup(function(use)
 
   use 'lervag/vimtex'
 
+  -- For Rust LSP support via rust-analyzer: https://rust-analyzer.github.io/book/other_editors.html#vimneovim
   use {
 	  'neoclide/coc.nvim',
 	  branch = 'release'
